@@ -15,7 +15,10 @@ angular.module('yo.home', ['ui.router'])
 			controller: 'HomeCtrl'
 		});
 	}])
-  .controller('HomeCtrl', function ($scope) {
+  .controller('HomeCtrl', function ($scope, Users) {
+
+  	$scope.users = Users.query();
+  	console.log($scope.users);
     
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
