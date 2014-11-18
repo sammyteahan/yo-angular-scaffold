@@ -8,22 +8,26 @@
  * Controller of the yoAngularScaffoldApp
  */
 angular.module('yo.home', ['ui.router'])
+
 .config(['$stateProvider', function ($stateProvider) {
 		$stateProvider.state( 'home', {
 			url: '/home',
 			templateUrl: 'views/home.html',
-			controller: 'HomeCtrl'
+			controller: 'HomeCtrl',
+      resolve: {
+        'Users': ['Users', function(Users) {
+          return Users.query();
+        }]
+      }
 		});
 	}])
-  .controller('HomeCtrl', function ($scope, Users) {
 
-  	$scope.users = Users.query();
-  	console.log($scope.users);
-    
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('HomeCtrl', function ($scope, Users) {
+  	
+    $scope.users = Users;
+
+    $scope.users.forEach(function(index) {
+      console.log(index);
+    });    
 
   });
