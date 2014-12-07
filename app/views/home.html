@@ -8,7 +8,29 @@
 </div>
 
 <div class="row marketing">
+  <h4>Users</h4>
   <ul>
     <li ng-repeat="user in users">{{ user.name }}</li>
   </ul>
 </div>
+
+<div class="row-marketing">
+	<h4>Admins</h4>
+	<ul>
+		<li ng-repeat="admin in admins">{{ admin.name }}</li>
+	</ul>
+</div>
+
+<form method="post">
+	<div class="form-group">
+		<label for="userName">User Name</label>
+		<input type="text" class="form-control" ng-model="formName">
+	</div>
+	<div class="form-group">
+		<label for="email">Email</label>
+		<input type="text" class="form-control" ng-model="formEmail">
+	</div>
+	<div class="form-group">
+		<input type="submit" class="btn btn-default" ng-click="newAdmin()">
+	</div>
+</form>
