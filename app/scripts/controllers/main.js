@@ -52,6 +52,6 @@ angular.module('yo.home', ['ui.router'])
       newAdmin.name = $scope.formName;
       newAdmin.email = $scope.formEmail;
       console.log(newAdmin);
-    }
+    };
 
   });
