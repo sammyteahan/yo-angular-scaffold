@@ -1,0 +1,1 @@
+A starting point for yeoman-angular based web apps
