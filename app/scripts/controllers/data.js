@@ -12,4 +12,13 @@ angular.module('yo.data', [])
 			Admins: Admins
 		};
 	}];
+}])
+
+.provider('Admins', [function () {
+	this.$get = ['$resource', function($resource) {
+		var Admin = $resource('http://localhost:3000/api/admins');
+		return {
+			admins : admins
+		};
+	}];
 }]);
